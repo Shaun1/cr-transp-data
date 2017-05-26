@@ -13,6 +13,32 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 RAW_DATA_FILE = os.path.join(DATA_DIR, RAW_DATA_FILENAME)
 
+COLUMN_NAMES = {
+0 : "RespondentID",
+1 : "CollectorID",
+2 : "StartDate",
+3 : "EndData",
+4 : "IP Address",
+5 : "Email Address",
+6 : "First Name",
+7 : "Last Name",
+8 : "(Blank)",
+9 : "Cabbagetown or Reynoldstown?",
+10: "Other Neighborhood?",
+11: "Street",
+12: "Age",
+13: "Number Over 16",
+14: "Number Unde 16",
+15: "Commute % Drive Alone",
+16: "Commute % Carpool",
+17: "Commute % MARTA Bus",
+18: "Commute % MARTA Rail",
+19: "Commute % Bicycle",
+20: "Commute % Walk",
+21: "Commute % Ride Service",
+22: "Commute % Motorcycle/Scooter",
+23: "Commute % Telecommute",
+}
 
 def load_xls():
     """Load an Excel file into a pandas DataFrame."""
