@@ -47,9 +47,9 @@ COLUMN_NAMES = {
 30: "Non-Commute % Ride Service",
 31: "Non-Commute % Motorcycle/Scooter",
 32: "% Trips Within C/R Town",
-33: "Top Destination Outside C/R Town",
-34: "Walk for Recreation",
-35: "Bike for Recreation",
+33: "Top Outside Destination",
+34: "Y/N - Walk for Recreation",
+35: "Y/N - Bike for Recreation",
 36: "Other Recreation",
 37: "RANK - Ped Safety",
 38: "RANK - Beltline",
@@ -61,8 +61,8 @@ COLUMN_NAMES = {
 44: "RANK - Reduced Speeding",
 45: "RANK - Road Condition",
 46: "RANK - Sidewalk Condition",
-47: "Other Trans. Concerns",
-48: "Your Trans Solutions",
+47: "Other Concerns",
+48: "Your Solutions",
 }
 
 def load_xls():
@@ -72,12 +72,19 @@ def load_xls():
     return dataframe
 
 
+def rename_columns(dataframe):
+    """Fix the column names."""
+    for index in xrange(0, dataframe.columns.size):
+        dataframe.columns.values[index] = COLUMN_NAMES[index]
+    return dataframe
+
+
 def load_and_clean_data():
     """Load data and run all cleaning steps."""
     raw_data = load_xls()
     # cleaning steps ...
-    data = raw_data
-    #
+    data = rename_columns(raw_data)
+    # ...
     return data
 
 
